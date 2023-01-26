@@ -1,4 +1,14 @@
+@font-face {
+    font-family: press-start-2p-regular;
+    src: url(assets/fonts/press-start-2p-regular.ttf);
+}
+
 body {
-    font-weight: bold;
-    font-size: 3rem;
+    background-color: #111;
+}
+
+h1 {
+    font-family: 'press-start-2p-regular';
+    color: mediumseagreen;
+    width: 60%;
 }
