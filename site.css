@@ -3,12 +3,110 @@
     src: url(assets/fonts/press-start-2p-regular.ttf);
 }
 
+/*Solarized Palette*/
+:root {
+    --base03: #002b36;
+    --base02: #073642;
+    --base01: #586e75;
+    --base00: #657b83;
+    --base0: #839496;
+    --base1: #93a1a1;
+    --base2: #eee8d5;
+    --base3: #fdf6e3;
+    --yellow: #b58900;
+    --orange: #cb4b16;
+    --red: #dc322f;
+    --magenta: #d33682;
+    --violet: #6c71c4;
+    --blue: #268bd2;
+    --cyan: #2aa198;
+    --green: #859900;
+}
+
 body {
-    background-color: #111;
+    background-color: var(--base02);
 }
 
 h1 {
     font-family: 'press-start-2p-regular';
-    color: mediumseagreen;
+    color: var(--cyan);
     width: 60%;
+}
+
+div.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    div.term-window {
+        min-width: 400px;
+        min-height: 300px;
+        background-color: var(--base02);
+        border-top-left-radius: 1%;
+        border-top-right-radius: 1%;
+        border-color: var(--base02);
+        border-style: outset;
+        div.term-titlebar {
+            display: flex;
+            flex-flow: row;
+            height: 16px;
+            justify-content: space-between;
+            padding: 5px;
+            color: var(--base3);
+            font-family: 'press-start-2p-regular';
+            font-size: 14px;
+
+            button {
+                font-family: 'press-start-2p-regular';
+                width: 40px;
+                border: none;
+            }
+
+            button.min-button,
+            button.max-button {
+                :hover {
+                    background-color: var(--base1);
+                }
+            }
+
+            button.close-button {
+                :hover {
+                    background-color: var(--red);
+                }
+            }
+        }
+
+        div.term-shell {
+            height: 265px;
+            background-color: var(--base03);
+            border-top-left-radius: 1%;
+            border-top-right-radius: 1%;
+            border-bottom-left-radius: 1%;
+            border-bottom-right-radius: 1%;
+            padding: 5px;
+
+            code {
+                display: block;
+            }
+
+            code.shell-header {
+                color: greenyellow;
+            }
+
+            code.command-line {
+                color: lightskyblue;
+
+                span.commands {
+                    margin-left: 2px;
+                    color: lightseagreen;
+
+                    :hover {
+                        cursor: text;
+                    }
+                }
+
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }
